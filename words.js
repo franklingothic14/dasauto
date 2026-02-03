@@ -1,0 +1,22 @@
+const WORDS = [
+  { article: "der", noun: "Tisch",  english: "table" },
+  { article: "die", noun: "Lampe",  english: "lamp" },
+  { article: "das", noun: "Auto",   english: "car" },
+  { article: "der", noun: "Hund",   english: "dog" },
+  { article: "die", noun: "Blume",  english: "flower" },
+  { article: "das", noun: "Fenster",english: "window" },
+  { article: "der", noun: "Stuhl",  english: "chair" },
+  { article: "das", noun: "Kind",   english: "child" },
+  { article: "der", noun: "Mensch", english: "person" },
+  { article: "das", noun: "Haus",   english: "house" },
+  { article: "die", noun: "Frau",   english: "woman" },
+  { article: "der", noun: "Mann",   english: "man" },
+  { article: "das", noun: "Buch",   english: "book" },
+  { article: "die", noun: "Zeitung",english: "newspaper" },
+  { article: "das", noun: "Bett",   english: "bed" },
+  { article: "die", noun: "Tür",    english: "door" },
+  { article: "das", noun: "Wasser", english: "water" },
+  { article: "der", noun: "Kaffee", english: "coffee" },
+  { article: "die", noun: "Milch",  english: "milk" },
+  { article: "das", noun: "Handy",  english: "mobile phone" }
+];

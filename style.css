@@ -1,0 +1,32 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+#word-box {
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+#english {
+  font-size: 1rem;
+  color: #555;
+}
+
+#buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+}
+
+#feedback {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+#stats {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #333;
+}
