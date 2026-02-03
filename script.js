@@ -15,11 +15,11 @@ function updateMistakes() {
   if (mistakesEl) {
     if (mistakes.length > 0) {
       mistakesEl.innerHTML = `
-        <h3>Помилки з артиклями:</h3>
-        <ul>${mistakes.map(m => `<li>${m.noun} (${m.english}) — правильно: ${m.article}</li>`).join('')}</ul>
+        <h3>Article mistakes:</h3>
+        <ul>${mistakes.map(m => `<li>${m.noun} (${m.english}) — correct: ${m.article}</li>`).join('')}</ul>
       `;
     } else {
-      mistakesEl.innerHTML = '<p>Поки що помилок немає! 👍</p>';
+      mistakesEl.innerHTML = '<p>No mistakes yet! 👍</p>';
     }
   }
 }
@@ -44,21 +44,21 @@ function handleAnswer(chosenArticle) {
 
   if (chosenArticle === current.article) {
     correctCount++;
-    feedbackEl.textContent = `Richtig! ${current.article} ${current.noun}`;
+    feedbackEl.textContent = `Correct! ${current.article} ${current.noun}`;
     feedbackEl.style.color = 'green';
   } else {
     wrongCount++;
-    feedbackEl.textContent = `Falsch. Richtige Antwort: ${current.article} ${current.noun}`;
+    feedbackEl.textContent = `Wrong. Correct answer: ${current.article} ${current.noun}`;
     feedbackEl.style.color = 'red';
     
-    // Додаємо помилку до списку
+    // Add mistake to list
     mistakes.push({ noun: current.noun, english: current.english, article: current.article });
     localStorage.setItem('articleMistakes', JSON.stringify(mistakes));
     updateMistakes();
   }
 
-  correctEl.textContent = `Правильно: ${correctCount}`;
-  wrongEl.textContent = `Помилок: ${wrongCount}`;
+  correctEl.textContent = `Correct: ${correctCount}`;
+  wrongEl.textContent = `Wrong: ${wrongCount}`;
 
   setTimeout(pickRandomWord, 1500);
 }
@@ -73,6 +73,6 @@ document.querySelectorAll('#buttons button').forEach(btn => {
 
 clearBtn.addEventListener('click', clearMistakes);
 
-// Ініціалізація
+// Initialize
 pickRandomWord();
 updateMistakes();
