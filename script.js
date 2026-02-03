@@ -31,6 +31,11 @@ function clearMistakes() {
 }
 
 function pickRandomWord() {
+  if (!WORDS || WORDS.length === 0) {
+    feedbackEl.textContent = 'Error: WORDS not loaded!';
+    feedbackEl.style.color = 'red';
+    return;
+  }
   const index = Math.floor(Math.random() * WORDS.length);
   current = WORDS[index];
   nounEl.textContent = current.noun;
@@ -51,7 +56,6 @@ function handleAnswer(chosenArticle) {
     feedbackEl.textContent = `Wrong. Correct answer: ${current.article} ${current.noun}`;
     feedbackEl.style.color = 'red';
     
-    // Add mistake to list
     mistakes.push({ noun: current.noun, english: current.english, article: current.article });
     localStorage.setItem('articleMistakes', JSON.stringify(mistakes));
     updateMistakes();
@@ -64,15 +68,19 @@ function handleAnswer(chosenArticle) {
 }
 
 // Event listeners
-document.querySelectorAll('#buttons button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const chosen = btn.getAttribute('data-article');
-    handleAnswer(chosen);
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('#buttons button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const chosen = btn.getAttribute('data-article');
+      handleAnswer(chosen);
+    });
   });
+
+  clearBtn.addEventListener('click', clearMistakes);
+
+  // Start after WORDS loaded
+  setTimeout(() => {
+    pickRandomWord();
+    updateMistakes();
+  }, 100);
 });
-
-clearBtn.addEventListener('click', clearMistakes);
-
-// Initialize
-pickRandomWord();
-updateMistakes();
