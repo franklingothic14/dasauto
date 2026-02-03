@@ -90,19 +90,56 @@ p {
     border-radius: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: linear-gradient(45deg, #3498db, #2980b9);
     color: white;
-    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-.buttons button:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 12px 25px rgba(52, 152, 219, 0.6);
+/* der - blue */
+.buttons button[data-article="der"] {
+    background: #025E73;
+    box-shadow: 0 8px 20px rgba(2, 94, 115, 0.4);
 }
 
-.buttons button:active {
+.buttons button[data-article="der"]:hover {
+    background: #014a5a;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(2, 94, 115, 0.6);
+}
+
+.buttons button[data-article="der"]:active {
+    transform: translateY(-2px);
+}
+
+/* die - pink */
+.buttons button[data-article="die"] {
+    background: #F2668B;
+    box-shadow: 0 8px 20px rgba(242, 102, 139, 0.4);
+}
+
+.buttons button[data-article="die"]:hover {
+    background: #ef4775;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(242, 102, 139, 0.6);
+}
+
+.buttons button[data-article="die"]:active {
+    transform: translateY(-2px);
+}
+
+/* das - green */
+.buttons button[data-article="das"] {
+    background: #03A688;
+    box-shadow: 0 8px 20px rgba(3, 166, 136, 0.4);
+}
+
+.buttons button[data-article="das"]:hover {
+    background: #02876d;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(3, 166, 136, 0.6);
+}
+
+.buttons button[data-article="das"]:active {
     transform: translateY(-2px);
 }
 
