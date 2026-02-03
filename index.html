@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <title>Der / Die / Das Trainer</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Артиклі німецьких слів</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Der / Die / Das Trainer</h1>
-  <div id="word-box">
-    <div id="noun"></div>
-    <div id="english"></div>
-  </div>
+    <div class="container">
+        <h1>Вивчай артиклі!</h1>
+        
+        <div id="word-display">
+            <div id="english" class="english"></div>
+            <div id="noun" class="noun"></div>
+        </div>
+        
+        <div id="feedback" class="feedback"></div>
+        
+        <div class="buttons" id="buttons">
+            <button data-article="der">der</button>
+            <button data-article="die">die</button>
+            <button data-article="das">das</button>
+        </div>
+        
+        <div class="stats">
+            <span id="correct">Правильно: 0</span>
+            <span id="wrong">Помилок: 0</span>
+        </div>
+        
+        <div id="mistakes" class="mistakes-section">
+            <!-- Список помилок з'явиться тут -->
+        </div>
+        
+        <button id="clear-mistakes" class="clear-btn">Очистити список помилок</button>
+    </div>
 
-  <div id="buttons">
-    <button data-article="der">der</button>
-    <button data-article="die">die</button>
-    <button data-article="das">das</button>
-  </div>
-
-  <div id="feedback"></div>
-  <div id="stats">
-    Richtig: <span id="correct">0</span> |
-    Falsch: <span id="wrong">0</span>
-  </div>
-
-  <script src="words.js"></script>
-  <script src="script.js"></script>
+    <script src="words.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
